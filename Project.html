@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="framework.css" />
+    <link rel="stylesheet" href="CreateUser.css" />
+
+    <script
+      src="https://kit.fontawesome.com/651db2a1e1.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      #projectControls h1 {
+        text-align: center;
+      }
+      #check:checked ~ .container {
+        margin-left: 250px;
+        transition: all 0.5s;
+      }
+      .sidebar {
+        position: absolute;
+        top: 12%;
+      }
+      .controlsContainer {
+        margin-top: 20px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-around;
+      }
+
+      .control label {
+        font-weight: bold;
+        color: blue;
+      }
+
+      .control {
+        flex: 1 1 calc(30% - 20px);
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        box-sizing: border-box;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .control:hover {
+        transform: translateY(-5px);
+      }
+
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+
+      textarea {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        resize: horizontal;
+        margin-bottom: 10px;
+      }
+
+      /* Ajoutez d'autres styles selon vos besoins */
+    </style>
+  </head>
+  <body>
+    <nav>
+      <label class="logo">AuditSmart</label>
+      <ul>
+        <!-- <li><a class="active" href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li> -->
+        <li>
+          <a href="login.html"
+            ><i id="logout" class="fa-sharp fa-solid fa-right-from-bracket"></i
+          ></a>
+        </li>
+      </ul>
+    </nav>
+    <input type="checkbox" id="check" />
+    <label class="check" for="check">
+      <i id="btn" class="fas fa-bars"></i>
+      <i id="cancel" class="fas fa-times"></i>
+    </label>
+    <div class="sidebar">
+      <header>My App</header>
+      <ul>
+        <li>
+          <a href="framework.html"
+            ><i class="fa-solid fa-bookmark"></i>Frameworks</a
+          >
+        </li>
+        <li>
+          <a href="CreateUser.html"
+            ><i class="fa-solid fa-user"></i>Create User</a
+          >
+        </li>
+        <li>
+          <a href="#"><i class="fa-solid fa-folder-plus"></i>Create Project</a>
+        </li>
+        <li>
+          <a class="active" href="Project.html"
+            ><i class="fa-solid fa-list"></i>Projects</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="container">
+      <div id="projectControls">
+        <h1>Mission 1</h1>
+
+        <!-- Affichage des contrôles pour le projet -->
+        <!-- i want to change the background -->
+        <div class="controlsContainer"></div>
+      </div>
+      <!-- </div> -->
+    </div>
+    <!-- <section></section> -->
+    <!-- <div class="container">
+    <div class="box1">Contenu de la box 1</div>
+    <div class="box2">Contenu de la box 2</div>
+  </div> -->
+    <button type="submit" value="enregistrer"></button>
+  </body>
+  <script>
+    // Simulation des données du projet avec contrôles
+    var projectData = {
+      projectName: "Nom du Projet",
+      controls: [
+        {
+          controlName: "Cybersecurity & Data Protection Governance Program ",
+          question:
+            "Does the organization facilitate the implementation of cybersecurity & data protection governance controls?",
+        },
+        {
+          controlName: "Measures of Performance ",
+          question:
+            "Does the organization develop, report and monitor cybersecurity & data privacy program measures of performance?",
+        },
+        {
+          controlName: "Key Performance Indicators (KPIs)",
+          question:
+            "Does the organization develop, report and monitor Key Performance Indicators (KPIs) to assist organizational management in performance monitoring and trend analysis of the cybersecurity & data privacy program?",
+        },
+        {
+          controlName: "Key Risk Indicators (KRIs) ",
+          question:
+            "Does the organization develop, report and monitor Key Risk Indicators (KRIs) to assist senior management in performance monitoring and trend analysis of the cybersecurity & data privacy program?",
+        },
+        {
+          controlName: "Measures of Performance ",
+          question:
+            "Does the organization develop, report and monitor cybersecurity & data privacy program measures of performance?",
+        },
+        {
+          controlName: "Standardized Naming Convention ",
+          question:
+            "Does the organization implement a scalable, standardized naming convention for systems, applications and services that avoids asset naming conflicts?",
+        },
+        // { controlName: "Asset Inventories  ", question: "Does the organization implement a scalable, standardized naming convention for systems, applications and services that avoids asset naming conflicts?" },
+        // Ajoutez plus de contrôles au besoin
+      ],
+    };
+
+    // Fonction pour afficher les contrôles du projet
+    function afficherControlesProjet() {
+      var projectControlsContainer = document.querySelector(
+        "#projectControls .controlsContainer"
+      );
+
+      projectData.controls.forEach(function (control) {
+        var controlDiv = document.createElement("div");
+        controlDiv.className = "control";
+
+        var controlLabel = document.createElement("label");
+        controlLabel.textContent = control.controlName + ":";
+        controlDiv.appendChild(controlLabel);
+
+        var questionLabel = document.createElement("div");
+        questionLabel.textContent = control.question + ":";
+        controlDiv.appendChild(questionLabel);
+
+        var notesTextarea = document.createElement("textarea");
+        notesTextarea.placeholder = "Ajouter des notes";
+        controlDiv.appendChild(notesTextarea);
+
+        projectControlsContainer.appendChild(controlDiv);
+      });
+    }
+
+    // Appel de la fonction pour afficher les contrôles du projet
+    afficherControlesProjet();
+  </script>
+  <script src="script.js"></script>
+</html>

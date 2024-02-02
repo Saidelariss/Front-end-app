@@ -55,6 +55,7 @@ p{
   font-size: 12px;
   letter-spacing: 1px;
   color: #ffffff;
+  cursor: pointer;
 }
 
 input {

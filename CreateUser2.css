@@ -5,19 +5,14 @@
   transform: translate(-50%,-50%);
   width: 400px;
   /* background: white; */
-  /* border-radius: 10px; */
- 
+  border-radius: 10px;
 }
 .main form{
-  border: 1px solid;
   margin-top: 100px;
   width: 400px;
-  height: 475px;
+  height: 600px;
   padding: 40px 40px;
   box-sizing: border-box;
-  box-shadow: 20px 0 20px rgba(0, 0, 255, 0.45);
-  
-  
 }
 .main h1{
   
@@ -44,7 +39,7 @@ form .text_field{
 .text_field label{
   position: absolute;
   top: 50%;
-  left: -14px;
+  left: 5px;
   padding: 20px;
   color: #adadad;
   transform: translateY(-50%);
@@ -67,10 +62,8 @@ form .text_field{
 
 .text_field input:focus ~ label,
 .text_field input:valid ~ label{
-  display: none;
   top: 1px;
   color: red;
-  
 }
 
 .text_field input:focus ~ span::before,
@@ -89,36 +82,8 @@ input[type="submit"]{
   font-weight: 700;
   cursor: pointer;
   outline: none;
-  margin-top: 40px;
 }
 input[type="submit"]:hover{
   border-color: #2691d9;
   transition: .5s;
 }
-
-
-.select{
-  margin-top: 20px;
-  
-}
-
-.person{
-  font-size: 16px;
-  color: #060303;
-  font-weight: bold;
-}
-
-input[type="radio"]{
-  margin-left: 10px;
-}
-
-.profil{
-  margin-right: 10px;
-}
-
-
-/* Create project */
-
-
-
-

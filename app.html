@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="framework.css" />
+
+    <script
+      src="https://kit.fontawesome.com/651db2a1e1.js"
+      crossorigin="anonymous"
+    ></script>
+    <style></style>
+  </head>
+  <body>
+    <nav>
+      <label class="logo">AuditSmart</label>
+      <ul>
+        <!-- <li><a class="active" href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li> -->
+        <li>
+          <a href="login.html"
+            ><i id="logout" class="fa-sharp fa-solid fa-right-from-bracket"></i
+          ></a>
+        </li>
+      </ul>
+    </nav>
+    <input type="checkbox" id="check" />
+    <label for="check">
+      <i id="btn" class="fas fa-bars"></i>
+      <i id="cancel" class="fas fa-times"></i>
+    </label>
+    <div class="sidebar">
+      <header>My App</header>
+      <ul>
+        <li>
+          <a href="framework.html"
+            ><i class="fa-solid fa-bookmark"></i>Frameworks</a
+          >
+        </li>
+        <li>
+          <a href="CreateUser.html"
+            ><i class="fa-solid fa-user"></i>Create User</a
+          >
+        </li>
+        <li>
+          <a href="CreateProject.html"
+            ><i class="fa-solid fa-folder-plus"></i>Create Project</a
+          >
+        </li>
+        <li>
+          <a href="Project.html"><i class="fa-solid fa-list"></i>Projects</a>
+        </li>
+        <!-- <li>
+          <a href=""><i class="fa-solid fa-upload"></i>Excel Upload</a>
+        </li> -->
+        <li>
+          <a href="#" id="uploadLink"
+            ><i class="fas fa-upload"></i>Excel Upload</a
+          >
+
+          <!-- Utilisez un input de type "file" caché -->
+          <input type="file" id="fileInput" style="display: none" />
+        </li>
+      </ul>
+    </div>
+
+    <div class="main"></div>
+    <!-- <input onclick="enregistrerFrameworks()" class="enregistrer" type="submit" value="Enregistrer"> -->
+    <section>
+      
+    </section>
+    <!-- <div class="container">
+      <div class="box1">Contenu de la box 1</div>
+      <div class="box2">Contenu de la box 2</div>
+    </div> -->
+  </body>
+
+  <script>
+    // Récupérez les éléments nécessaires
+    var uploadLink = document.getElementById("uploadLink");
+    var fileInput = document.getElementById("fileInput");
+
+    // Ajoutez un gestionnaire d'événements au lien
+    uploadLink.addEventListener("click", function () {
+      // Déclenchez le clic sur l'élément input de type "file"
+      fileInput.click();
+    });
+
+    // Ajoutez un gestionnaire d'événements pour le changement de fichier
+    fileInput.addEventListener("change", function () {
+      // Vous pouvez ajouter du code pour traiter le fichier téléchargé ici
+      alert("Fichier téléchargé avec succès !");
+    });
+
+    function updateSelectedFrameworks(checkboxId, frameworkName) {
+      var checkbox = document.getElementById(checkboxId);
+      var selectedFrameworksDiv = document.getElementById("selectedFrameworks");
+
+      if (checkbox.checked) {
+        // Ajoutez le texte dans l'autre div si la case à cocher est cochée
+        var newFramework = document.createElement("div");
+        newFramework.textContent = frameworkName;
+        selectedFrameworksDiv.appendChild(newFramework);
+      } else {
+        // Retirez le texte si la case à cocher est décochée
+        var frameworks = selectedFrameworksDiv.getElementsByTagName("div");
+        for (var i = 0; i < frameworks.length; i++) {
+          if (frameworks[i].textContent === frameworkName) {
+            selectedFrameworksDiv.removeChild(frameworks[i]);
+            break;
+          }
+        }
+      }
+    }
+    function enregistrerFrameworks() {
+      // Affiche une alerte
+      alert("Les frameworks ont été enregistrés !");
+
+      // Vide la div des frameworks sélectionnés
+      var selectedFrameworksDiv = document.getElementById("selectedFrameworks");
+      selectedFrameworksDiv.innerHTML = "";
+    }
+  </script>
+
+  <script src="script.js"></script>
+</html>

@@ -6,7 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="framework.css" />
     <link rel="stylesheet" href="CreateUser.css" />
-
+    <link rel="stylesheet" href="CreatePrject.css">
     <script
       src="https://kit.fontawesome.com/651db2a1e1.js"
       crossorigin="anonymous"
@@ -40,65 +40,77 @@
           >
         </li>
         <li>
-          <a class="active" href="CreateUser.html"
+          <a  href="CreateUser.html"
             ><i class="fa-solid fa-user"></i>Create User</a
           >
         </li>
         <li>
-          <a href="CreateProject.html"><i class="fa-solid fa-folder-plus"></i>Create Project</a>
+          <a class="active" href="CreateProject.html"><i class="fa-solid fa-folder-plus"></i>Create Project</a>
         </li>
         <li>
           <a href="Project.html"><i class="fa-solid fa-list"></i>Projects</a>
         </li>
       </ul>
     </div>
+    
     <div class="main">
+       
       <form  action="">
-        <h1>Créer un utilisateur</h1>
+        <h1>Créer un Projet</h1>
         <div class="text_field">
           
           
           <input id="firstName" type="text" required/>
           <span></span>
-          <label for="firstName">Prénom</label>
+          <label for="firstName">Nom du projet</label>
         </div>
         <div class="text_field">
          
        
           <input id="lastName" type="text" required />
           <span></span>
-          <label for="lastName">Nom</label>
+          <label for="lastName">Client</label>
         </div>
-        <div class="text_field">
-          <input type="email" id="email" required>
-          <span></span>
-          <label for="email">Email</label>
-        </div>
-        <div class="select">
-          <label class="person"for="gender">Civilité:</label>
-          <label for="Mr"><input type="radio" id="Mr" name="gender"> Mr</label>
-          <label for="Mme"><input type="radio" id="Mme" name="gender"> Mme</label>
-        </div>
+        <label for="auditors">Sélectionnez les auditeurs :</label>
+        <select id="auditors" name="auditors" multiple>
+          <option value="auditor1">Said el ariss</option>
+          <option value="auditor2">Houssam el mouqaddam</option>
+          <option value="auditor3">Yassine Ait elasri</option>
+          <option value="auditor1">Jeremy lassey</option>
+          <!-- <option value="auditor2">Auditeur 2</option> -->
+         
+        </select>
+
+        <label for="frameworks">Sélectionnez les frameworks :</label>
+        <select id="frameworks" name="frameworks" multiple>
+          <option value="framework1">Security Operations </option>
+          <option value="framework2">SCAIO </option>
+          <option value="framework3">Operational Compliance </option>
+          <option value="framework4">IEC </option>
+          <option value="framework5">ISO 31000 </option>
+         
+          
+        </select>
+        <input onclick="enregistrerProjet()" type="submit" value="Enregistrer"></button>
+       
+
         
-        <div class="select">
-          <label class="person profil" for="profile">Profil:</label>
-          <label  for="chefProjet"><input type="radio" id="chefProjet" name="profile"> Chef de projet</label>
-          <label for="auditeurNormal"><input type="radio" id="auditeurNormal" name="profile"> Auditeur Normal</label>
-        </div>        
-        <input onclick="createUser()" type="submit" value="Enregistrer"></button>
       </form>
+      
       <!-- </div> -->
     </div>
+    
     <section></section>
     <!-- <div class="container">
     <div class="box1">Contenu de la box 1</div>
     <div class="box2">Contenu de la box 2</div>
   </div> -->
   </body>
+
   <script>
-    function createUser() {
+    function enregistrerProjet() {
             // Affiche une alerte
-            alert("l'utilisateur est créé !");
+            alert("Le projet a été bien créé !");
             
             // Vide la div des frameworks sélectionnés
             var selectedFrameworksDiv = document.getElementById('selectedFrameworks');

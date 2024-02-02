@@ -45,10 +45,7 @@
           >
         </li>
         <li>
-          <a href="CreateProject.html"><i class="fa-solid fa-folder-plus"></i>Create Project</a>
-        </li>
-        <li>
-          <a href="Project.html"><i class="fa-solid fa-list"></i>Projects</a>
+          <a href="#"><i class="fa-solid fa-folder-plus"></i>Create Project</a>
         </li>
       </ul>
     </div>
@@ -74,18 +71,21 @@
           <span></span>
           <label for="email">Email</label>
         </div>
-        <div class="select">
-          <label class="person"for="gender">Civilité:</label>
-          <label for="Mr"><input type="radio" id="Mr" name="gender"> Mr</label>
-          <label for="Mme"><input type="radio" id="Mme" name="gender"> Mme</label>
+        <div class="text_field">
+          <label for="gender">civilité:</label>
+          <select class="input" name="gender" id="gender">
+            <option value="Mr">M.</option>
+            <option value="Mme">Mme</option>
+          </select>
         </div>
-        
-        <div class="select">
-          <label class="person profil" for="profile">Profil:</label>
-          <label  for="chefProjet"><input type="radio" id="chefProjet" name="profile"> Chef de projet</label>
-          <label for="auditeurNormal"><input type="radio" id="auditeurNormal" name="profile"> Auditeur Normal</label>
-        </div>        
-        <input onclick="createUser()" type="submit" value="Enregistrer"></button>
+        <div>
+          <label for="profile">profil</label>
+          <select name="profile" id="profile">
+            <option value="chefProjet">Chef de projet</option>
+            <option value="auditeurNormal">Auditeur Normal</option>
+          </select>
+        </div>
+        <input type="submit" onclick="showAlert()">Enregistrer</button>
       </form>
       <!-- </div> -->
     </div>
@@ -96,14 +96,9 @@
   </div> -->
   </body>
   <script>
-    function createUser() {
-            // Affiche une alerte
-            alert("l'utilisateur est créé !");
-            
-            // Vide la div des frameworks sélectionnés
-            var selectedFrameworksDiv = document.getElementById('selectedFrameworks');
-            selectedFrameworksDiv.innerHTML = '';
-        }
-  </script>
+    function showAlert() {
+        alert("Bouton Submit cliqué !");
+    }
+</script>
   <script src="script.js"></script>
 </html>
